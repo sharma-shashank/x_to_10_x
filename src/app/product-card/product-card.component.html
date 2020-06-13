@@ -13,6 +13,8 @@
         id="{{ item.id }}"
         (change)="onQuantityChange(item.id, item.price)"
         value="1"
+        min="1"
+        max="{{ item.quantity }}"
         required
       />
     </mat-form-field>
