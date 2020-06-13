@@ -1,0 +1,43 @@
+<mat-card class="example-card" *ngFor="let item of productList; let i = index">
+  <mat-card-header class="card-header">
+    <mat-card-title>{{ item.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{ item.image }}" alt="Photo of a Shiba Inu" />
+  <mat-chip-list>
+    <mat-chip class="price-chip">Price:- ₹ {{ item.price }}/unit</mat-chip>
+    <mat-form-field *ngIf="isCartPageRnedered">
+      <input
+        matInput
+        type="number"
+        placeholder="Enter Quantity"
+        id="{{ item.id }}"
+        (change)="onQuantityChange(item.id, item.price)"
+        value="1"
+        required
+      />
+    </mat-form-field>
+  </mat-chip-list>
+  <div class="card-header total-price" id="total_{{ item.id }}"></div>
+  <mat-card-content class="discription" *ngIf="!isCartPageRnedered">
+    <p>
+      {{ item.description }}
+    </p>
+  </mat-card-content>
+  <button
+    mat-raised-button
+    color="primary"
+    class="card-actions"
+    *ngIf="!isCartPageRnedered"
+    (click)="addProductToCart(item.id)"
+  >
+    Add To Cart
+  </button>
+  <button
+    mat-raised-button
+    class="card-actions"
+    *ngIf="isCartPageRnedered"
+    (click)="deleteProductFromCart(item)"
+  >
+    Remove From Cart
+  </button>
+</mat-card>
