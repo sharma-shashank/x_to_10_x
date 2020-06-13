@@ -1,0 +1,10 @@
+.top-align {
+  display: flex;
+  padding-top: 10%;
+  justify-content: center;
+}
+
+.total-price {
+  text-align: center;
+  padding-top: 5%;
+}
