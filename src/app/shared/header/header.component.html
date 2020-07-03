@@ -1,13 +1,7 @@
 <nav class="docs-navbar-header">
-  E-Commerce
-  <span
-    matBadge="{{ totalItemCount }}"
-    matBadgeOverlap="false"
-    matBadgeColor="accent"
-    matBadgePosition="before"
-    class="material-icons cart-icon"
-    [routerLink]="['/cart']"
-  >
-    shopping_cart
-  </span>
+  <mat-chip-list *ngFor="let item of typeOfCategory">
+    <mat-chip class="cat-chip" (click)="selectCategory(item)">{{
+      item
+    }}</mat-chip>
+  </mat-chip-list>
 </nav>

@@ -1,3 +1,3 @@
 export enum APIRoutes {
-  product_list = 'https://www.mocky.io/v2/5eda4003330000740079ea60'
+  product_list = 'http://demo4603548.mockable.io/products'
 }
